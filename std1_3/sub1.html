@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>과제용: js study std1_3_1</h1>
+    <div class="card_wrap">
+        <div class="img_area">
+            <img src="" alt="">
+            <i class="ico_like"></i>
+        </div>
+        <div class="txt_area">
+            <div class="tit"></div>
+            <div class="desc"></div>
+            <div class="date"></div>
+        </div>
+    </div>
+</body>
+<script>
+    // ver1 각각 인수로
+    function Card(imgURL, like, tit, desc, dateTime) {
+        this.imgURL = imgURL;
+        this.like = like;
+        this.tit = tit;
+        this.desc = desc;
+        this.dateTime = dateTime;
+        this.show = function () {
+
+        };
+        this.init = function () {
+
+        };
+    }
+
+
+    var card1 = new Card("../images/imgURL1.jpg", false, "MAIN TITLE1", "description description1", "2020.09.13");
+    var card2 = new Card("../images/imgURL2.jpg", true, "MAIN TITLE2", "description description2", "2020.09.13");
+    var card3 = new Card("../images/imgURL2.jpg", true, "MAIN TITLE3", "description description3", "2020.09.13");
+
+    console.log("생성자 card1: ", card1);
+    console.log("생성자 card2: ", card2);
+    console.log("생성자 card3: ", card2);
+
+    // ver2 객체를 인수로 넘김
+
+    // function Card(imgURL, like, tit, desc, dateTime){
+    //     this.suit = suit;
+    //     this.rank = rank;
+    // }
+
+    // var card1 = new Card("heart", "A");
+    // var card2 = new Card("space", "A");
+
+    // console.log("생성자 card1: ", card1);
+    // console.log("생성자 card2: ", card2);
+
+
+    // ver3 반복문을 사용
+    /*
+    function Card(imgURL, like, tit, desc, dateTime){
+        this.suit = suit;
+        this.rank = rank;
+    }
+
+    var card1 = new Card("heart", "A");
+    var card2 = new Card("space", "A");
+
+    console.log("생성자 card1: ", card1);
+    console.log("생성자 card2: ", card2);
+    */
+</script>
+
+</html>
