@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>과제용: js study std1_3_1</h1>
+    <div class="card_wrap">
+        <div class="img_area">
+            <img src="" alt="">
+            <i class="ico_like"></i>
+        </div>
+        <div class="txt_area">
+            <div class="tit"></div>
+            <div class="desc"></div>
+            <div class="date"></div>
+        </div>
+    </div>
+</body>
+<script>
+    window.onload = function(){
+        var cards = [];
+        for (var i = 0; i < 5; i++){
+            // 인스턴스에 값 대입
+            cards[i] =  new Card("../images/imgURL1.jpg", "MAIN TITLE1", "description description1", "2020.09.13");
+            // 인스턴스 마크업 연결 실행
+            cards[i].init();
+        }
+    }
+
+    // Card 생성자
+    function Card(imgURL, tit, desc, dateTime) {
+        this.imgURL = imgURL;
+        this.tit = tit;
+        this.desc = desc;
+        this.dateTime = dateTime;
+    }
+
+    // 생성자 안에서 메서드를 정의하는 방식의 문제점 : 메모리 공간 차지(p.337) -> 해결: 생성자의 prototype 사용(chain))
+    // Card 생성자의 프로토타입 추가
+    Card.prototype = {
+        // 첫 세팅(마크업이랑 연결)
+        init: function() {
+            // 초기 공통으로 수행되는 것들 설정 
+            // this 사용 가능(this는 각 인스턴스들)
+
+            return this; // method chain 사용하기 위해 this 객체 반환
+        }
+    }
+
+
+</script>
+
+</html>
